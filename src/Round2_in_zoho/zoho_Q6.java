@@ -1,3 +1,5 @@
+package Round2_in_zoho;
+
 public class zoho_Q6 {
         public static int call(String s){
             char[] array=s.toCharArray();

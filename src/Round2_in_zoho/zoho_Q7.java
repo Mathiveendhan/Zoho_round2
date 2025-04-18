@@ -1,5 +1,6 @@
-class zoho_Q7 {
+package Round2_in_zoho;
 
+class zoho_Q7 {
     //find the len of the grid
     public static void main(String[] args) {
         String str="packets";

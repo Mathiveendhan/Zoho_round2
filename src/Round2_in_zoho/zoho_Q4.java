@@ -1,4 +1,6 @@
- import java.util.*;
+package Round2_in_zoho;
+
+import java.util.*;
 
 class zoho_Q4 {
     public static void main(String[] args) {
