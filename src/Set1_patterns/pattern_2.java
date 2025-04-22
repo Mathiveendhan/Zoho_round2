@@ -6,8 +6,6 @@
 
 package Set1_patterns;
 
-import java.util.ArrayList;
-
 public class pattern_2 {
     public static void main(String[] args) {
         int n=6;
