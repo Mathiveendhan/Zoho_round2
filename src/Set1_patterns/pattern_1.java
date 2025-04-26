@@ -5,9 +5,7 @@
 //        5 9 12 14 15
 
 
-
-        package Set1_patterns;
-
+package Set1_patterns;
 public class pattern_1 {
     public static void main(String[] args) {
         int n=5;
