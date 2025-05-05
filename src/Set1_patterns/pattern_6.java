@@ -35,7 +35,7 @@ public class pattern_6 {
                 System.out.print(count);
                 if(count<10){
                     System.out.print("   ");
-                }else if(count>9 && count<100){
+                }else if(count<100){
                     System.out.print("  ");
                 }else{
                     System.out.print(" ");
