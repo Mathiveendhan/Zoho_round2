@@ -2,51 +2,37 @@ package zoho_round3_Nov_2025;
 
 import java.util.*;
 public class problem1 {
-        public static void main(String[] args) {
-            Scanner sc=new Scanner(System.in);
-            int a=sc.nextInt();
-            int amount=a;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int amount = sc.nextInt(); // total amount to withdraw
 
-            int[] arr=new int[20];
-            int idx=0,z=0;
+        int[] denominations = {2000, 500, 200, 100};
+        int[] stock = {1, 3, 2, 5};
+        int[] used = new int[denominations.length]; // to store how many notes of each denomination used
 
-            int[] denominations={2000,500,200,100};
-            int[] stock={1,3,2,5};
+        int remaining = amount;
 
-            for(int i=0;i<denominations.length;i++) {
-                if(stock[i]>0 && amount>=denominations[i]){
-
-                    amount = amount - denominations[i];
-                    stock[i]--;
-
-                    arr[idx] = denominations[i];
-                    idx++;
-
-                    if(stock[i] > 0 && amount >= denominations[i]){
-                        i--;
-                    }
-
-                } else if(stock[i]==0 && amount!=0){
-                    System.out.print("Not Possible");
-                    z = 1;
-                    break;
-                }
-            }
-
-            int l=0, r=0;
-            if(z==0){
-                while(r<arr.length){
-                    if(arr[r]==0) break;
-                    if(arr[l] != arr[r]){
-                        System.out.println(arr[l] + ":" + (r-l));
-                        l = r;
-                    }
-                    r++;
-                }
-                System.out.println(arr[l] + ":" + (r-l));
+        for (int i = 0; i < denominations.length; i++) {
+            while (stock[i] > 0 && remaining >= denominations[i]) {
+                remaining -= denominations[i];
+                stock[i]--;
+                used[i]++;
             }
         }
+
+        if (remaining != 0) {
+            System.out.println("Not Possible");
+        } else {
+            // print notes used
+            for (int i = 0; i < denominations.length; i++) {
+                if (used[i] > 0) {
+                    System.out.println(denominations[i] + ":" + used[i]);
+                }
+            }
+        }
+    }
 }
+
 
 //✔ Sample Input
 //        2700
